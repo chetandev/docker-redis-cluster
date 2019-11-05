@@ -1,8 +1,8 @@
-FROM redis:4.0.2-alpine
+FROM redis:latest
 
 MAINTAINER Tommy Elmesewdy <r1tommy@gmail.com>
 
-EXPOSE 6379
+EXPOSE 7000
 ADD redis.conf /etc/redis/redis.conf
 #RUN chown redis:redis /etc/redis/redis.conf
 #ADD redis-entrypoint.sh /usr/local/bin/
