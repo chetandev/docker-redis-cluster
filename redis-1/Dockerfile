@@ -2,7 +2,7 @@ FROM redis:latest
 
 MAINTAINER Tommy Elmesewdy <r1tommy@gmail.com>
 
-EXPOSE 7000
+EXPOSE 6379
 ADD redis.conf /etc/redis/redis.conf
 #RUN chown redis:redis /etc/redis/redis.conf
 #ADD redis-entrypoint.sh /usr/local/bin/
