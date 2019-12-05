@@ -11,9 +11,14 @@ services:
 
 
   healthcheck:
+    container_name: healthcheck
     image: "chetandev/redis-health-check"
+    environment:
+       - REDIS_PORT=6379
+       - REDIS_HOST=redis-1
+       - PORT=80
     network_mode: "host"
-    
+
 
 
   
