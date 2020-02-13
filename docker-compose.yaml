@@ -6,19 +6,20 @@ services:
   redis-1:
     container_name: redis-1
     build: redis-1
+    restart: always
     command: redis-server /etc/redis/redis.conf
+    volumes:
+            - /mnt/docker/redis1:/data
     network_mode: "host"
-
-
-  healthcheck:
-    container_name: healthcheck
-    image: "chetandev/redis-health-check:latest"
-    environment:
-       - REDIS_PORT=6379
-       - REDIS_HOST=0.0.0.0
-       - PORT=80
+  
+  redis-2:
+    container_name: redis-2
+    build: redis-2
+    restart: always
+    command: redis-server /etc/redis/redis.conf
+    volumes:
+          - /mnt/docker/redis2:/data
     network_mode: "host"
-
 
 
   
